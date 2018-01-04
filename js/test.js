@@ -67,7 +67,7 @@ function saveOrder() {
   if (Order.pizza.length === 1 && flag=== true) {
     Order.pizza[0].type= $("input[name='type']:checked").val();
     Order.pizza[0].size= $("input[name='size']:checked").val();
-    if ($("input[name='cheese']:checked").val() === "Cheese") {
+    if ($("input[name='Cheese']:checked").val() === "Cheese") {
       Order.pizza[0].cheese= true;
     } else {
       Order.pizza[0].cheese= false;
@@ -92,7 +92,7 @@ function saveOrder() {
   }
   newPizza["type"]= $("input[name='type']:checked").val();
   newPizza["size"]= $("input[name='size']:checked").val();
-  if ($("input[name='cheese']:checked").val() === "Cheese") {
+  if ($("input[name='Cheese']:checked").val() === "Cheese") {
     newPizza["cheese"]= true;
   }
 
