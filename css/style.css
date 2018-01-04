@@ -109,10 +109,6 @@ th {
 }
 
 
-.modal{
-  display: block !important;
-}
-
 /* Important part */
 .modal-dialog{
   overflow-y: initial !important
