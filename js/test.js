@@ -1,8 +1,3 @@
-//$('#s1').click(function() {
-    //alert("g");
-//});
-
-
 // -------------objects----------------------
 customer= {
   "firstName": "",
@@ -14,7 +9,6 @@ customer= {
 };
 //------------------------------------------
 
-//------------
 var Order= {
   "pizza": [
     {"type": "type1",
@@ -22,13 +16,7 @@ var Order= {
     "ingredients": ['a','b','c'],
     "cheese": "",
     "price": 42
-  }/*,
-  {"type": "type2",
-  "size": "large",
-  "ingredients": ['x','y'],
-  "cheese": false,
-  "price": 38
-}*/
+  }
 ]
 };
 
@@ -68,8 +56,6 @@ $("div[id^='myModal']").each(function(){
   });
 
 });
-
-//--------
 
 //------------ saving---------------
 var Total= calc();
@@ -124,7 +110,9 @@ function saveOrder() {
 
 }
 
-}; //--------------------------------------
+};
+
+//------------save Customer Info--------------------------
 function saveCustomerInfo() {
   //saving customer Info.-----
   customer.firstName= $('#fName').val();
@@ -135,11 +123,6 @@ function saveCustomerInfo() {
   customer.city= $('#city').val();
 
 };
-
-
-
-
-
 
 //------------ display order details-------
 function displayOrder() {
@@ -164,11 +147,8 @@ function displayOrder() {
 
     $('#orderTable').append(formattedRow);
 
-
-
-    //$('#total').text(TotalPrice.getTotal());
   }
-  $('#total').text(Total.getTotal() + ' SR');
+  $('#total').text(Total.getTotal() + ' SR'); //display total..
 
 };
 //--------
@@ -176,9 +156,7 @@ function displayThanks() {
   $('#customerName').text(customer.firstName + " " + customer.lastName);
 }
 
-
-
-//------
+//------calculate price for each pizza -----
 
 function pizzaPrice(pizza) {
   var x=0;
@@ -200,7 +178,7 @@ function pizzaPrice(pizza) {
     return x;
 
 }
-//-----------------
+//-----------------remove pizza button ------------
 
 $('#orderTable').on('click', 'button', function() {
   var a = $(this).parents('tr');
@@ -222,9 +200,7 @@ function delLastPizza() {
   Order.pizza.pop();
 };
 
-//---------
-
-
+//---------validation --------
 
 function validate() {
   if ($('#fName').val() !== "" && $('#lName').val() !== "" && $('#phone').val() !== "" && $('#street').val() !== "" && $('#postalCode').val() !== "" && $('#city').val() !== "") {
@@ -243,7 +219,7 @@ function validateOrder() {
     $('#reqired').show();
   }
 };
-//-----
+//-----reset form for new pizza ---------
 function resetForm() {
   document.getElementById("form1").reset();
   $('#reqired').show();
