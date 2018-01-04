@@ -9,22 +9,12 @@ body, html {
     font-family: "Lato", sans-serif;
 }
 
-.bg {
-    /* The image used */
-    background-image: url("/img/pizza22.jpg");
-    /* Full height */
-    height: 100%;
 
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-}
 
 .modal-header {
   background-color: #d75452;
   color: #000000;
+  
 }
 ul {
   list-style-type: none;
@@ -111,6 +101,11 @@ th {
 }
 #reqired {
   color:#d75452;
+}
+.legend {
+  font-size: 16px;
+  font-weight: bold;
+
 }
 /*---adjust size for education img---*/
 

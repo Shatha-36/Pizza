@@ -43,6 +43,7 @@
     <!-- -------------------------------------->
 
 
+
     <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
 
       <div class="w3-display-middle">
@@ -57,6 +58,8 @@
     </div>
 
 
+
+
       <!---------------------------------------------------------------------->
 
       <!-- Modal for order detail-->
@@ -68,48 +71,154 @@
               <h4 class="modal-title" id="myModalLabel">Order Details</h4>
             </div>
             <div class="modal-body">
+              <strong><h4>Select your order:</h4></strong>
               <form id="form1">
-              <table id="table1" style="width:100%; font-size:16px;" >
-                <tr class="rowSpace"><strong><h4>Select your order:</h4></strong></tr>
-                <tr class="rowSpace">
-                  <td><strong>Type of Pizza: </strong>
-                    <span class="astricks">*</span>
-                  </td>
-                  <td>
-                    <label class="radio-inline"><input type="radio" name="type" value="Margarita" onclick="validateOrder();" onchange="validateOrder();">Margarita</label>
-                    <label class="radio-inline"><input type="radio" name="type" value="Pepronni" onclick="validateOrder();" onchange="validateOrder();">Pepronni</label>
-                    <label class="radio-inline"><input type="radio" name="type" value="Mixed" onclick="validateOrder();" onchange="validateOrder();">Mixed</label>
-                  </td>
-                </tr>
 
-                <tr class="rowSpace">
-                  <td><strong>Pizza Size: </strong>
-                    <span class="astricks">*</span>
-                  </td>
-                  <td>
-                    <input type="radio" name="size" value="Small" onclick="validateOrder();" onchange="validateOrder();"> Small (20 SR)
-                    <input type="radio" name="size" value="Medium" onclick="validateOrder();" onchange="validateOrder();"> Medium (25 SR)
-                    <input type="radio" name="size" value="Large" onclick="validateOrder();" onchange="validateOrder();"> Large (30 SR)
-                  </td>
-                </tr>
-                <tr>
-                  <td><strong>Ingredients(4 SR): </strong> </td>
-                  <td>
-                    <input type="checkbox" name="ingredient" value="Mashroom"> Mashroom
-                    <input type="checkbox" name="ingredient" value="Broccoli"> Broccoli
-                    <input type="checkbox" name="ingredient" value="Tomato"> Tomato
-                  </td>
-                </tr>
-                <tr>
-                  <td><strong>Cheese: (5 SR)</strong></td>
-                  <td>
-                    <input type="checkbox" name="cheese" value="Cheese"> Extra Cheese
-                  </td>
-                </tr>
-                <tr>
-                  <td><div id="reqired">* reqired fields</div><td>
-                </tr>
-              </table>
+                <div class="form-row">
+                  <fieldset class="form-group">
+                    <div class="row">
+                      <div class="legend col-form-label col-sm-4"><strong>Type of Pizza: </strong>
+                        <span class="astricks">*</span></div>
+                      <div class="col-sm-8">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="type" value="Margarita" onclick="validateOrder();" onchange="validateOrder();">
+                          <label class="form-check-label" for="gridRadios1">
+                            Margarita
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="type" value="Margarita" onclick="validateOrder();" onchange="validateOrder();">
+                          <label class="form-check-label" for="gridRadios1">
+                            Pepronni
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="type" value="Margarita" onclick="validateOrder();" onchange="validateOrder();">
+                          <label class="form-check-label">
+                            Mixed
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="form-group">
+                    <div class="row">
+                      <div class="legend col-form-label col-sm-4"><strong>Pizza Size: </strong>
+                        <span class="astricks">*</span></div>
+                      <div class="col-sm-8">
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="size" value="Small" onclick="validateOrder();" onchange="validateOrder();">
+                          <label class="form-check-label" for="gridRadios1">
+                            Small (20 SR)
+                          </label>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="size" value="Medium" onclick="validateOrder();" onchange="validateOrder();">
+                          <label class="form-check-label">
+                            Medium (25 SR)
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input"  type="radio" name="size" value="Large" onclick="validateOrder();" onchange="validateOrder();">
+                          <label class="form-check-label">
+                            Large (30 SR)
+                          </label>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                  </fieldset>
+
+                  <fieldset class="form-group">
+                  <div class="row">
+                      <div class="legend col-form-label col-sm-4">
+                        <strong>Ingredients(4 SR): </strong>
+                      </div>
+                    <div class="col-sm-8">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="ingredient" value="Mashroom">
+                        <label class="form-check-label" for="gridCheck1">
+                          Mashroom
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="ingredient" value="Broccoli">
+                        <label class="form-check-label" for="gridCheck1">
+                          Broccoli
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="ingredient" value="Tomato">
+                        <label class="form-check-label" for="gridCheck1">
+                          Tomato
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  </fieldset>
+
+
+
+                  <fieldset class="form-group">
+                  <div class="row">
+                      <div class="legend col-form-label col-sm-4">
+                        <strong>Cheese(5 SR): </strong>
+                      </div>
+                    <div class="col-sm-8">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="Cheese" value="Cheese">
+                        <label class="form-check-label" for="gridCheck1">
+                          Extra Cheese
+                        </label>
+                      </div>
+                      </div>
+                    </div>
+                  </fieldset>
+
+                </div>
+
+              <!--  <table id="table1" style="width:100%; font-size:16px;" >
+                  <tr class="rowSpace"><strong><h4>Select your order:</h4></strong></tr>
+                  <tr class="rowSpace">
+                    <td><strong>Type of Pizza: </strong>
+                      <span class="astricks">*</span>
+                    </td>
+                    <td>
+                      <label class="radio-inline"><input type="radio" name="type" value="Margarita" onclick="validateOrder();" onchange="validateOrder();">Margarita</label>
+                      <label class="radio-inline"><input type="radio" name="type" value="Pepronni" onclick="validateOrder();" onchange="validateOrder();">Pepronni</label>
+                      <label class="radio-inline"><input type="radio" name="type" value="Mixed" onclick="validateOrder();" onchange="validateOrder();">Mixed</label>
+                    </td>
+                  </tr>
+
+                  <tr class="rowSpace">
+                    <td><strong>Pizza Size: </strong>
+                      <span class="astricks">*</span>
+                    </td>
+                    <td>
+                      <input type="radio" name="size" value="Small" onclick="validateOrder();" onchange="validateOrder();"> Small (20 SR)
+                      <input type="radio" name="size" value="Medium" onclick="validateOrder();" onchange="validateOrder();"> Medium (25 SR)
+                      <input type="radio" name="size" value="Large" onclick="validateOrder();" onchange="validateOrder();"> Large (30 SR)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Ingredients(4 SR): </strong> </td>
+                    <td>
+                      <input type="checkbox" name="ingredient" value="Mashroom"> Mashroom
+                      <input type="checkbox" name="ingredient" value="Broccoli"> Broccoli
+                      <input type="checkbox" name="ingredient" value="Tomato"> Tomato
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Cheese: (5 SR)</strong></td>
+                    <td>
+                      <input type="checkbox" name="cheese" value="Cheese"> Extra Cheese
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><div id="reqired">* reqired fields</div><td>
+                  </tr>
+                </table>-->
             </form>
 
               <!--wwwwwww -->
@@ -136,7 +245,7 @@
               <p id="dis"></p>
               <div class="panel panel-default">
                 <div class="panel-heading"><strong>Order Details:</strong></div>
-                <div class="panel-body">
+                <div class="panel-body" style="overflow-x:auto;">
                   <table id="orderTable" class="table-striped" style="width:100%">
                     <tr id="header">
                       <th> Remove </th>
