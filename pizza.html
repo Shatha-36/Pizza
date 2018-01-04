@@ -178,47 +178,7 @@
 
                 </div>
 
-              <!--  <table id="table1" style="width:100%; font-size:16px;" >
-                  <tr class="rowSpace"><strong><h4>Select your order:</h4></strong></tr>
-                  <tr class="rowSpace">
-                    <td><strong>Type of Pizza: </strong>
-                      <span class="astricks">*</span>
-                    </td>
-                    <td>
-                      <label class="radio-inline"><input type="radio" name="type" value="Margarita" onclick="validateOrder();" onchange="validateOrder();">Margarita</label>
-                      <label class="radio-inline"><input type="radio" name="type" value="Pepronni" onclick="validateOrder();" onchange="validateOrder();">Pepronni</label>
-                      <label class="radio-inline"><input type="radio" name="type" value="Mixed" onclick="validateOrder();" onchange="validateOrder();">Mixed</label>
-                    </td>
-                  </tr>
 
-                  <tr class="rowSpace">
-                    <td><strong>Pizza Size: </strong>
-                      <span class="astricks">*</span>
-                    </td>
-                    <td>
-                      <input type="radio" name="size" value="Small" onclick="validateOrder();" onchange="validateOrder();"> Small (20 SR)
-                      <input type="radio" name="size" value="Medium" onclick="validateOrder();" onchange="validateOrder();"> Medium (25 SR)
-                      <input type="radio" name="size" value="Large" onclick="validateOrder();" onchange="validateOrder();"> Large (30 SR)
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><strong>Ingredients(4 SR): </strong> </td>
-                    <td>
-                      <input type="checkbox" name="ingredient" value="Mashroom"> Mashroom
-                      <input type="checkbox" name="ingredient" value="Broccoli"> Broccoli
-                      <input type="checkbox" name="ingredient" value="Tomato"> Tomato
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><strong>Cheese: (5 SR)</strong></td>
-                    <td>
-                      <input type="checkbox" name="cheese" value="Cheese"> Extra Cheese
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><div id="reqired">* reqired fields</div><td>
-                  </tr>
-                </table>-->
             </form>
 
               <!--wwwwwww -->
@@ -285,33 +245,42 @@
               <h4 class="modal-title" id="myModalLabel">Customer Information</h4>
             </div>
             <div class="modal-body">
-              <form id="customerForm" method="post" class="form-horizontal">
 
+            <form id="customerForm">
               <strong><h4>Fill your Information:</h4></strong>
-              First Name: <span class="astricks">*</span>
-              <input id="fName" type="text" class="form-control" onchange="validate()">
-              Last Name: <span class="astricks">*</span>
-              <input id="lName" type="text" class="form-control" onchange="validate()">
-              Mobile Number: <span class="astricks">*</span>
-              <input type="text" class="form-control" id="phone" onchange="validate()">
-              Street: <span class="astricks">*</span>
-              <input type="text" class="form-control" id="street" onchange="validate()">
-              Postal Code: <span class="astricks">*</span>
-              <input type="text" class="form-control" id="postalCode" onchange="validate()">
-              City: <span class="astricks">*</span>
-              <input type="text" class="form-control" id="city" onchange="validate()"><br>
-              <div id="error-msg">* reqired fields</div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-prev btn-danger">Prev</button>
-                <button type="button" id="place-btn" onclick="saveCustomerInfo(); displayThanks();" class="btn btn-next btn-danger" >Place your Order</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
 
+              <div class="form-group">
+                <label >First Name:<span class="astricks">*</span></label>
+                <input id="fName" type="text" class="form-control" onchange="validate()">
               </div>
-
-            </form>
+              <div class="form-group">
+                <label >Last Name:<span class="astricks">*</span></label>
+                <input id="lName" type="text" class="form-control" onchange="validate()">
+              </div>
+              <div class="form-group">
+                <label >Mobile Number:<span class="astricks">*</span></label>
+                <input type="text" class="form-control" id="phone" onchange="validate()">
+              </div>
+              <div class="form-group">
+                <label >Street:<span class="astricks">*</span></label>
+                <input type="text" class="form-control" id="street" onchange="validate()">
+              </div>
+              <div class="form-group">
+                <label >Postal Code:<span class="astricks">*</span></label>
+                <input type="text" class="form-control" id="postalCode" onchange="validate()">
+              </div>
+              <div class="form-group">
+                <label >City:<span class="astricks">*</span></label>
+                <input type="text" class="form-control" id="city" onchange="validate()">
+              </div>
+              <div id="error-msg">* reqired fields</div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-prev btn-danger">Prev</button>
+              <button type="button" id="place-btn" onclick="saveCustomerInfo(); displayThanks();" class="btn btn-next btn-danger" >Place your Order</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
 
             </div>
-
           </div>
         </div>
       </div>

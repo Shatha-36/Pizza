@@ -109,12 +109,14 @@ th {
 }
 
 
-/* Important part */
+.modal {
+  overflow: auto !important;
+}
 .modal-dialog{
   overflow-y: initial !important
 }
 .modal-body{
-  
+
   overflow-y: auto;
 }
 
