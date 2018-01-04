@@ -1,0 +1,277 @@
+<!-- By Shatha Alotaibi :) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Pizza</title>
+  <!-- Latest compiled and minified CSS -->
+
+  <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <script src="https://use.fontawesome.com/6debe7311a.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<!-- Body ----------------------->
+  <body>
+
+    <div class="container-fluid" style="background-color:#000000;" id="head">
+      <div class="row">
+        <div class="col-md-4">
+          <h2> Online Pizza </h2>
+        </div>
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4" >
+          <h3 id="orderNum" style="color:white;font-size: 20px; text-align: center;font-weight: bold;"></h3>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- -------------------------------------->
+
+
+    <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+
+      <div class="w3-display-middle">
+        <h1 class="w3-jumbo w3-animate-top" style="text-align:center;">Online Pizza</h1>
+        <hr class="w3-border-grey" style="margin:auto;width:40%">
+        <p class="w3-large w3-center"><br>
+          <button type="button" id="main" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal1">
+          Order Now
+          </button>
+        </p>
+      </div>
+    </div>
+
+
+      <!---------------------------------------------------------------------->
+
+      <!-- Modal for order detail-->
+      <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Order Details</h4>
+            </div>
+            <div class="modal-body">
+              <form id="form1">
+              <table id="table1" style="width:100%; font-size:16px;" >
+                <tr class="rowSpace"><strong><h4>Select your order:</h4></strong></tr>
+                <tr class="rowSpace">
+                  <td><strong>Type of Pizza: </strong>
+                    <span class="astricks">*</span>
+                  </td>
+                  <td>
+                    <label class="radio-inline"><input type="radio" name="type" value="Margarita" onclick="validateOrder();" onchange="validateOrder();">Margarita</label>
+                    <label class="radio-inline"><input type="radio" name="type" value="Pepronni" onclick="validateOrder();" onchange="validateOrder();">Pepronni</label>
+                    <label class="radio-inline"><input type="radio" name="type" value="Mixed" onclick="validateOrder();" onchange="validateOrder();">Mixed</label>
+                  </td>
+                </tr>
+
+                <tr class="rowSpace">
+                  <td><strong>Pizza Size: </strong>
+                    <span class="astricks">*</span>
+                  </td>
+                  <td>
+                    <input type="radio" name="size" value="Small" onclick="validateOrder();" onchange="validateOrder();"> Small (20 SR)
+                    <input type="radio" name="size" value="Medium" onclick="validateOrder();" onchange="validateOrder();"> Medium (25 SR)
+                    <input type="radio" name="size" value="Large" onclick="validateOrder();" onchange="validateOrder();"> Large (30 SR)
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Ingredients(4 SR): </strong> </td>
+                  <td>
+                    <input type="checkbox" name="ingredient" value="Mashroom"> Mashroom
+                    <input type="checkbox" name="ingredient" value="Broccoli"> Broccoli
+                    <input type="checkbox" name="ingredient" value="Tomato"> Tomato
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Cheese: (5 SR)</strong></td>
+                  <td>
+                    <input type="checkbox" name="cheese" value="Cheese"> Extra Cheese
+                  </td>
+                </tr>
+                <tr>
+                  <td><div id="reqired">* reqired fields</div><td>
+                </tr>
+              </table>
+            </form>
+
+              <!--wwwwwww -->
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-prev btn-danger">Prev</button>
+              <button id="btn-1" type="button" class="btn btn-next btn-danger" onclick="saveOrder(); displayOrder();">Next</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for order confirmation-->
+      <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Confirmation</h4>
+            </div>
+            <div class="modal-body">
+              <p id="dis"></p>
+              <div class="panel panel-default">
+                <div class="panel-heading"><strong>Order Details:</strong></div>
+                <div class="panel-body">
+                  <table id="orderTable" class="table-striped" style="width:100%">
+                    <tr id="header">
+                      <th> Remove </th>
+                      <th>Type</th>
+                      <th>Size</th>
+                      <th>Ingredients</th>
+                      <th>Cheese</th>
+                      <th>Price</th>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading" style="text-align:right; padding-right: 40px;"><strong>Total Price:    </strong> <span id="total"> </span> <br></div>
+            <div class="panel-body">
+                  <center><button type="button" class="btn btn-prev btn-link" onclick="resetForm()">[+] Add Another Pizza</button></center>
+            </div>
+          </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-prev btn-danger" onclick="delLastPizza();">Prev</button>
+              <button type="button" class="btn btn-next btn-danger">Next</button>
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <!-- Modal for personal Info.-->
+
+      <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Customer Information</h4>
+            </div>
+            <div class="modal-body">
+              <form id="customerForm" method="post" class="form-horizontal">
+
+              <strong><h4>Fill your Information:</h4></strong>
+              First Name: <span class="astricks">*</span>
+              <input id="fName" type="text" class="form-control" onchange="validate()">
+              Last Name: <span class="astricks">*</span>
+              <input id="lName" type="text" class="form-control" onchange="validate()">
+              Mobile Number: <span class="astricks">*</span>
+              <input type="text" class="form-control" id="phone" onchange="validate()">
+              Street: <span class="astricks">*</span>
+              <input type="text" class="form-control" id="street" onchange="validate()">
+              Postal Code: <span class="astricks">*</span>
+              <input type="text" class="form-control" id="postalCode" onchange="validate()">
+              City: <span class="astricks">*</span>
+              <input type="text" class="form-control" id="city" onchange="validate()"><br>
+              <div id="error-msg">* reqired fields</div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-prev btn-danger">Prev</button>
+                <button type="button" id="place-btn" onclick="saveCustomerInfo(); displayThanks();" class="btn btn-next btn-danger" >Place your Order</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+
+              </div>
+
+            </form>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+      <!-- Modal for thanks-->
+      <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 id="thx" class="modal-title" id="myModalLabel">Thank you</h4>
+            </div>
+            <div class="modal-body">
+              <div id="customerName"></div><br>
+                <div  style="color: green; text-align:center; font-weight: bold;">
+                  <img src="img/loading.gif" alt="loading" style="width: 50px"><br>
+                   We Are Preparing Your Pizza ...
+                   <br>
+                 </div>
+                 <div  style="text-align:center; font-weight: bold;"> You Will Recieve Your Order After 45 min
+
+                  </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="orderNumber()">Done</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+<!-------------->
+
+
+    <!--Contact Me  -------------------------------------->
+    <footer class="container-fluid" style="background-color:#000000;" id="Contact">
+        <div class="row">
+          <div class="col-md-12">
+            <h2>Contact Us</h2>
+          </div>
+        </div>
+
+      <div class="row text-center contact-text">
+        <div class="col-md-4">
+          <i class="fa fa-envelope-o" aria-hidden="true"></i> Shatha_36@hotmail.com
+        </div>
+        <div class="col-md-4">
+          <i class="fa fa-phone-square" aria-hidden="true"></i> +966546375XXX
+        </div>
+        <div class="col-md-4">
+          <i class="fa fa-twitter-square" aria-hidden="true"></i> Shathaaa
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+  <!-- jQuery library -->
+
+
+  <script src="js/test.js"></script>
+  </body>
+</html>

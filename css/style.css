@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+}
+
+/*---Main---*/
+body, html {
+    height: 100%;
+    position: relative;
+    font-family: "Lato", sans-serif;
+}
+
+.bg {
+    /* The image used */
+    background-image: url("/img/pizza22.jpg");
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.modal-header {
+  background-color: #d75452;
+  color: #000000;
+}
+ul {
+  list-style-type: none;
+}
+span {
+  font-weight: bold;
+}
+
+body, html {height: 100%;}
+.bgimg {
+    background-image: url('../img/pizza22.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+
+}
+
+#main-btn {
+  text-align: center;
+  margin: auto;
+}
+.btn-loc {
+  position: absolute;
+  align-items: center;
+}
+
+
+
+
+/*---NavBar---*/
+
+
+/*---Adding padding for text area---*/
+
+
+
+
+/*---Header---*/
+h2 {
+  font-size: 24px;
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+}
+
+h1 {
+  text-align: right;
+  font-size: 32px;
+  font-family: "Shrikhand", cursive;
+
+}
+
+h4 {
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+}
+#thx {
+  color: white;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+#customerName {
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+}
+
+#table1 {
+    border-collapse: separate;
+    border-spacing: 15px;
+}
+
+th {
+  font-weight: bold;
+  background-color: #d75452;
+  color: white;
+  text-align: left;
+}
+#error-msg {
+  color:#d75452;
+}
+.astricks {
+  color:#d75452;
+}
+#reqired {
+  color:#d75452;
+}
+/*---adjust size for education img---*/
+
+
+/*---Contact Me Row---*/
