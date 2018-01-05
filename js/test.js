@@ -1,3 +1,4 @@
+//---- By Shatha Alotaibi - 2018 ------------
 // -------------objects----------------------
 customer= {
   "firstName": "",
@@ -20,7 +21,7 @@ var Order= {
 ]
 };
 
-//----------
+//---------- calculate the total price -----------
 
 function calc() {
   var total= 0;
